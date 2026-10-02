@@ -1,4 +1,4 @@
-# Rumo - assistente de viagens com IA
+# 🛩️ Rumo - assistente de viagens com IA
 
 O usuário informa **destino, quantidade de dias, estilo de viagem** (econômico, moderado ou luxuoso) e o **passaporte**.
 O sistema consulta APIs públicas, pede a uma IA para organizar o roteiro e devolve:
@@ -9,20 +9,18 @@ O sistema consulta APIs públicas, pede a uma IA para organizar o roteiro e devo
 - regras de visto e estadia máxima (com fonte e data da consulta)
 - checklist de viagem
 
-> **Status: MVP.** Funciona de ponta a ponta com Gemini (camada gratuita) ou Claude. Custos, visto e transporte ainda usam dados provisórios (veja "Limitações").
+> **Status: MVP.** Funciona de ponta a ponta com Gemini (camada gratuita). Custos, visto e transporte ainda usam dados provisórios (veja "Limitações").
 
 ## Como funciona
 
     Tela (web ou Flutter)  ->  API FastAPI  ->  APIs de dados (câmbio, clima, atrações)
                                    |
-                                   +->  IA (Gemini ou Claude) monta o roteiro em JSON
+                                   +->  IA (Gemini) monta o roteiro em JSON
                                    +->  Python calcula custos e consulta visto
-
-Regra de ouro: **a IA organiza, o código calcula.** Preço, câmbio e visto nunca saem do modelo.
 
 ## Stack
 - Backend: Python, FastAPI, httpx, pydantic
-- IA: Gemini (padrão, gratuito para testes) ou Claude, escolhido por variável de ambiente
+- IA: Gemini (padrão, gratuito para testes)
 - Dados: Open-Meteo (clima e geocodificação), Frankfurter e AwesomeAPI (câmbio), OpenTripMap (atrações, opcional)
 - Front: protótipo web em HTML puro e app mobile em Flutter
 
@@ -52,10 +50,9 @@ Chave gratuita do Gemini: https://aistudio.google.com (Get API key).
 
 | Variável | Para que serve |
 |---|---|
-| `LLM_PROVIDER` | `gemini` (padrão) ou `claude` |
+| `LLM_PROVIDER` | `gemini` (padrão) |
 | `GEMINI_API_KEY` | chave do Google AI Studio |
 | `GEMINI_MODEL` / `GEMINI_MODEL_RESERVA` | modelo principal e o usado se o principal estiver sobrecarregado |
-| `ANTHROPIC_API_KEY` / `CLAUDE_MODEL` | só se `LLM_PROVIDER=claude` |
 | `OPENTRIPMAP_KEY` | opcional, melhora a lista de atrações |
 
 **Nunca versione o `.env`.** Ele já está no `.gitignore`.
