@@ -1,84 +1,115 @@
-# 🛩️ Rumo - assistente de viagens com IA
+# 🧭 Rumo – Assistente do Viajante
 
-O usuário informa **destino, quantidade de dias, estilo de viagem** (econômico, moderado ou luxuoso) e o **passaporte**.
-O sistema consulta APIs públicas, pede a uma IA para organizar o roteiro e devolve:
+> Monte sua expedição. Informe o destino, as datas e o seu jeito de viajar, e o Rumo cria um roteiro dia a dia com ajuda de IA.
 
-- roteiro dia a dia, com cidades e destaques
-- transporte entre cidades
-- estimativa de gastos em reais e câmbio da moeda local
-- regras de visto e estadia máxima (com fonte e data da consulta)
-- checklist de viagem
+![versão](https://img.shields.io/badge/vers%C3%A3o-1.2-green)
+![python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![status](https://img.shields.io/badge/status-em%20desenvolvimento-orange)
 
-> **Status: MVP.** Funciona de ponta a ponta com Gemini (camada gratuita). Custos, visto e transporte ainda usam dados provisórios (veja "Limitações").
+---
 
-## Como funciona
+## 📖 Sobre o projeto
 
-    Tela (web ou Flutter)  ->  API FastAPI  ->  APIs de dados (câmbio, clima, atrações)
-                                   |
-                                   +->  IA (Gemini) monta o roteiro em JSON
-                                   +->  Python calcula custos e consulta visto
+O **Rumo** é um assistente de viagens com inteligência artificial. Em vez de apenas listar atrações, ele faz o usuário sentir que está **criando uma expedição**: você conta como gosta de viajar e o Rumo monta um roteiro personalizado, com estimativa de custos e atividades organizadas por dia.
 
-## Stack
-- Backend: Python, FastAPI, httpx, pydantic
-- IA: Gemini (padrão, gratuito para testes)
-- Dados: Open-Meteo (clima e geocodificação), Frankfurter e AwesomeAPI (câmbio), OpenTripMap (atrações, opcional)
-- Front: protótipo web em HTML puro e app mobile em Flutter
+O projeto tem identidade própria, voltada ao universo do mochileiro, da aventura e das experiências, e a ideia é evoluir futuramente para um site e um aplicativo móvel.
 
-## Estrutura
+---
 
-    app/              backend (main, planner, providers, schemas)
-    data/             paises.json (51 países) e visto.csv
-    web/              tela web, servida pelo próprio backend
-    flutter_app/lib/  código do app mobile (crie o projeto com flutter create e copie a pasta lib)
+## ✨ Funcionalidades
 
-## Rodando localmente
+- **Nova viagem** em formulário por etapas:
+  1. **Destino** – vários países e suporte a multidestinos
+  2. **Datas** – seleção por calendário, com cálculo automático da quantidade de dias
+  3. **Estilo de viagem** – 🎒 mochileiro, 🛏️ confortável ou 💎 luxuoso
+  4. **Interesses** – trekking, gastronomia, história, entre outros
+  5. **Conte mais** – campo livre para lugares, restaurantes, endereço do hotel etc.
+- **Roteiro em blocos por dia**, com opção de **adicionar** e **excluir** atividades
+- **Estimativa de custos** gerada pela IA considerando destino, estilo e duração
+- Todas as informações do formulário servem de contexto para a IA
+- Viagens salvas durante a execução do servidor (persistência em banco de dados prevista para versões futuras)
 
-Requisitos: Python 3.10+.
+---
 
-    python -m venv .venv
-    .venv\Scripts\Activate.ps1        # Windows (Mac/Linux: source .venv/bin/activate)
-    pip install -r requirements.txt
-    copy .env.example .env            # Mac/Linux: cp .env.example .env
-    # edite o .env e coloque sua GEMINI_API_KEY
-    python -m uvicorn app.main:app --reload --port 8000
+## 🆕 Novidades da 1.2
 
-Abra http://localhost:8000 (tela web) ou http://localhost:8000/docs (documentação da API).
+- 🎨 **Novo visual**: paleta mais clara e viva, inspirada em natureza, mapas e trilhas, com formas fluidas
+- 😀 **Emojis** nas telas de estilo de viagem e de interesses, deixando a navegação mais intuitiva e descontraída
+- 🌍 **Seleção de destinos aprimorada**, com mais opções de países
+- 💰 **Lógica de custos melhorada**: a IA passa a trazer valores mais próximos da realidade
+- 🧹 **Simplificação**: removidos o campo de passaporte e a parte de vistos (ficam para uma versão futura)
+- 🗑️ **Limpeza do repositório**: removidos os arquivos `.dart` (`flutter_app`); o foco agora é o site, e o app móvel fica para depois
 
-Chave gratuita do Gemini: https://aistudio.google.com (Get API key).
+---
 
-## Configuração (.env)
+## 🛠️ Tecnologias
 
-| Variável | Para que serve |
-|---|---|
-| `LLM_PROVIDER` | `gemini` (padrão) |
-| `GEMINI_API_KEY` | chave do Google AI Studio |
-| `GEMINI_MODEL` / `GEMINI_MODEL_RESERVA` | modelo principal e o usado se o principal estiver sobrecarregado |
-| `OPENTRIPMAP_KEY` | opcional, melhora a lista de atrações |
+- **Backend:** Python
+- **IA:** Google Gemini (padrão para desenvolvimento) com opção de trocar para Claude (Anthropic) via variável no `.env`
+- **Frontend:** HTML, CSS e JavaScript
 
-**Nunca versione o `.env`.** Ele já está no `.gitignore`.
+---
 
-## Endpoints
-- `POST /api/plan` recebe `{destino, dias, estilo, passaporte}` e devolve o plano completo
-- `GET /api/paises` lista de países para os seletores
+## 🚀 Como executar
 
-## App Flutter (opcional)
+### Pré-requisitos
+- Python 3.10 ou superior
+- Uma chave de API do Gemini (há plano gratuito) ou da Anthropic
 
-    flutter create --org com.seudominio --project-name rumo rumo
-    cd rumo
-    flutter pub add http
-    # copie flutter_app/lib/* para rumo/lib/
-    flutter run                                              # emulador Android
-    flutter run --dart-define=API_URL=http://IP_DO_PC:8000   # celular real, mesma rede Wi-Fi
+### Passo a passo
 
-## Limitações conhecidas
-- `data/paises.json`: os multiplicadores de custo por país são **estimativas**; ajuste com dados reais.
-- `data/visto.csv`: só tem uma linha de exemplo. Preencha com regras verificadas ou integre uma API de visto. Regras de entrada mudam; sempre confirme no site oficial ou na embaixada.
-- `providers.rotas()`: ainda vazio (pretende integrar Rome2rio ou Google Routes).
-- A camada gratuita do Gemini tem limites e termos próprios; confira antes de uso comercial.
+```bash
+# 1. Clone o repositório
+git clone https://github.com/cyberccosta/Rumo-Travel-Assistant.git
+cd Rumo-Travel-Assistant
 
-## Roadmap
-1. Dados reais de custo por país
-2. Transporte entre cidades com preço e duração
-3. Módulo de visto com fonte verificável
-4. Cache de roteiros e limite de uso por usuário
-5. Hospedagem do backend com HTTPS e publicação do app nas lojas
+# 2. (Opcional) Crie e ative um ambiente virtual
+python -m venv venv
+venv\Scripts\activate        # Windows
+# source venv/bin/activate   # Linux/macOS
+
+# 3. Instale as dependências
+pip install -r requirements.txt
+
+# 4. Configure as variáveis de ambiente
+copy .env.example .env       # Windows
+# cp .env.example .env       # Linux/macOS
+
+# 5. Inicie o servidor
+python app.py
+```
+
+Depois, acesse o endereço exibido no terminal (normalmente `http://localhost:5000`).
+
+### Configuração do `.env`
+
+```env
+AI_PROVIDER=gemini        # gemini ou claude
+GEMINI_API_KEY=sua_chave_aqui
+ANTHROPIC_API_KEY=sua_chave_aqui
+```
+
+> ⚠️ Nunca suba o arquivo `.env` para o GitHub. Confirme que ele está no `.gitignore`.
+
+---
+
+## 📌 Versões
+
+| Versão | Destaques |
+|--------|-----------|
+| **1.2** | Novo visual, emojis, destinos e custos melhorados, remoção de vistos/passaporte e dos arquivos `.dart` |
+| 1.1 | Formulário em etapas, roteiro em blocos por dia, multidestinos |
+| 1.0 | Backend em Python + tela web com integração à IA |
+
+---
+
+## 👤 Autor
+
+**Lucas de Carvalho Costa**
+[LinkedIn](https://linkedin.com/in/lucascarvalhocosta) · [GitHub](https://github.com/cyberccosta)
+
+---
+
+## 📄 Licença
+
+Defina aqui a licença do projeto (por exemplo, MIT).
