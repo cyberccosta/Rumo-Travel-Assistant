@@ -109,7 +109,3 @@ ANTHROPIC_API_KEY=sua_chave_aqui
 [LinkedIn](https://linkedin.com/in/lucascarvalhocosta) · [GitHub](https://github.com/cyberccosta)
 
 ---
-
-## 📄 Licença
-
-Defina aqui a licença do projeto (por exemplo, MIT).
