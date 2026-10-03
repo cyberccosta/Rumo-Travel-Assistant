@@ -1,11 +1,21 @@
 [
  {
+  "iso2": "AL",
+  "nome": "Albânia",
+  "mult": 0.7,
+  "moeda": "ALL",
+  "lat": 41.33,
+  "lng": 19.82,
+  "continente": "Europa"
+ },
+ {
   "iso2": "DE",
   "nome": "Alemanha",
   "mult": 1.3,
   "moeda": "EUR",
   "lat": 52.52,
-  "lng": 13.4
+  "lng": 13.4,
+  "continente": "Europa"
  },
  {
   "iso2": "AR",
@@ -13,7 +23,17 @@
   "mult": 0.8,
   "moeda": "ARS",
   "lat": -34.6,
-  "lng": -58.38
+  "lng": -58.38,
+  "continente": "América do Sul"
+ },
+ {
+  "iso2": "AM",
+  "nome": "Armênia",
+  "mult": 0.6,
+  "moeda": "AMD",
+  "lat": 40.18,
+  "lng": 44.51,
+  "continente": "Ásia"
  },
  {
   "iso2": "AU",
@@ -21,7 +41,17 @@
   "mult": 1.4,
   "moeda": "AUD",
   "lat": -33.87,
-  "lng": 151.21
+  "lng": 151.21,
+  "continente": "Oceania"
+ },
+ {
+  "iso2": "BZ",
+  "nome": "Belize",
+  "mult": 0.9,
+  "moeda": "BZD",
+  "lat": 17.25,
+  "lng": -88.77,
+  "continente": "América Central"
  },
  {
   "iso2": "BO",
@@ -29,7 +59,8 @@
   "mult": 0.6,
   "moeda": "BOB",
   "lat": -16.5,
-  "lng": -68.15
+  "lng": -68.15,
+  "continente": "América do Sul"
  },
  {
   "iso2": "BR",
@@ -37,7 +68,26 @@
   "mult": 0.9,
   "moeda": "BRL",
   "lat": -15.79,
-  "lng": -47.88
+  "lng": -47.88,
+  "continente": "América do Sul"
+ },
+ {
+  "iso2": "BG",
+  "nome": "Bulgária",
+  "mult": 0.7,
+  "moeda": "BGN",
+  "lat": 42.7,
+  "lng": 23.32,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "BT",
+  "nome": "Butão",
+  "mult": 0.9,
+  "moeda": "BTN",
+  "lat": 27.47,
+  "lng": 89.64,
+  "continente": "Ásia"
  },
  {
   "iso2": "BE",
@@ -45,7 +95,17 @@
   "mult": 1.3,
   "moeda": "EUR",
   "lat": 50.85,
-  "lng": 4.35
+  "lng": 4.35,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "BA",
+  "nome": "Bósnia e Herzegovina",
+  "mult": 0.7,
+  "moeda": "BAM",
+  "lat": 43.86,
+  "lng": 18.41,
+  "continente": "Europa"
  },
  {
   "iso2": "KH",
@@ -53,7 +113,8 @@
   "mult": 0.55,
   "moeda": "KHR",
   "lat": 11.56,
-  "lng": 104.93
+  "lng": 104.93,
+  "continente": "Ásia"
  },
  {
   "iso2": "CA",
@@ -61,7 +122,8 @@
   "mult": 1.4,
   "moeda": "CAD",
   "lat": 45.42,
-  "lng": -75.7
+  "lng": -75.7,
+  "continente": "América do Norte"
  },
  {
   "iso2": "CL",
@@ -69,7 +131,8 @@
   "mult": 1.0,
   "moeda": "CLP",
   "lat": -33.45,
-  "lng": -70.67
+  "lng": -70.67,
+  "continente": "América do Sul"
  },
  {
   "iso2": "CN",
@@ -77,7 +140,8 @@
   "mult": 0.9,
   "moeda": "CNY",
   "lat": 39.9,
-  "lng": 116.4
+  "lng": 116.4,
+  "continente": "Ásia"
  },
  {
   "iso2": "CO",
@@ -85,7 +149,8 @@
   "mult": 0.7,
   "moeda": "COP",
   "lat": 4.71,
-  "lng": -74.07
+  "lng": -74.07,
+  "continente": "América do Sul"
  },
  {
   "iso2": "KR",
@@ -93,7 +158,8 @@
   "mult": 1.1,
   "moeda": "KRW",
   "lat": 37.57,
-  "lng": 126.98
+  "lng": 126.98,
+  "continente": "Ásia"
  },
  {
   "iso2": "CR",
@@ -101,7 +167,8 @@
   "mult": 1.0,
   "moeda": "CRC",
   "lat": 9.93,
-  "lng": -84.08
+  "lng": -84.08,
+  "continente": "América Central"
  },
  {
   "iso2": "HR",
@@ -109,7 +176,17 @@
   "mult": 1.0,
   "moeda": "EUR",
   "lat": 45.81,
-  "lng": 15.98
+  "lng": 15.98,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "DK",
+  "nome": "Dinamarca",
+  "mult": 1.4,
+  "moeda": "DKK",
+  "lat": 55.68,
+  "lng": 12.57,
+  "continente": "Europa"
  },
  {
   "iso2": "EG",
@@ -117,7 +194,17 @@
   "mult": 0.55,
   "moeda": "EGP",
   "lat": 30.04,
-  "lng": 31.24
+  "lng": 31.24,
+  "continente": "África"
+ },
+ {
+  "iso2": "SV",
+  "nome": "El Salvador",
+  "mult": 0.7,
+  "moeda": "USD",
+  "lat": 13.69,
+  "lng": -89.19,
+  "continente": "América Central"
  },
  {
   "iso2": "AE",
@@ -125,7 +212,8 @@
   "mult": 1.5,
   "moeda": "AED",
   "lat": 25.2,
-  "lng": 55.27
+  "lng": 55.27,
+  "continente": "Oriente Médio"
  },
  {
   "iso2": "EC",
@@ -133,7 +221,26 @@
   "mult": 0.7,
   "moeda": "USD",
   "lat": -0.18,
-  "lng": -78.47
+  "lng": -78.47,
+  "continente": "América do Sul"
+ },
+ {
+  "iso2": "SK",
+  "nome": "Eslováquia",
+  "mult": 0.9,
+  "moeda": "EUR",
+  "lat": 48.15,
+  "lng": 17.11,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "SI",
+  "nome": "Eslovênia",
+  "mult": 1.0,
+  "moeda": "EUR",
+  "lat": 46.06,
+  "lng": 14.51,
+  "continente": "Europa"
  },
  {
   "iso2": "ES",
@@ -141,7 +248,8 @@
   "mult": 1.1,
   "moeda": "EUR",
   "lat": 40.42,
-  "lng": -3.7
+  "lng": -3.7,
+  "continente": "Europa"
  },
  {
   "iso2": "US",
@@ -149,7 +257,8 @@
   "mult": 1.6,
   "moeda": "USD",
   "lat": 38.91,
-  "lng": -77.04
+  "lng": -77.04,
+  "continente": "América do Norte"
  },
  {
   "iso2": "PH",
@@ -157,7 +266,17 @@
   "mult": 0.6,
   "moeda": "PHP",
   "lat": 14.6,
-  "lng": 120.98
+  "lng": 120.98,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "FI",
+  "nome": "Finlândia",
+  "mult": 1.3,
+  "moeda": "EUR",
+  "lat": 60.17,
+  "lng": 24.94,
+  "continente": "Europa"
  },
  {
   "iso2": "FR",
@@ -165,7 +284,17 @@
   "mult": 1.3,
   "moeda": "EUR",
   "lat": 48.86,
-  "lng": 2.35
+  "lng": 2.35,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "GE",
+  "nome": "Geórgia",
+  "mult": 0.6,
+  "moeda": "GEL",
+  "lat": 41.72,
+  "lng": 44.79,
+  "continente": "Ásia"
  },
  {
   "iso2": "GR",
@@ -173,7 +302,26 @@
   "mult": 1.0,
   "moeda": "EUR",
   "lat": 37.98,
-  "lng": 23.73
+  "lng": 23.73,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "GT",
+  "nome": "Guatemala",
+  "mult": 0.65,
+  "moeda": "GTQ",
+  "lat": 14.63,
+  "lng": -90.51,
+  "continente": "América Central"
+ },
+ {
+  "iso2": "HN",
+  "nome": "Honduras",
+  "mult": 0.65,
+  "moeda": "HNL",
+  "lat": 14.07,
+  "lng": -87.19,
+  "continente": "América Central"
  },
  {
   "iso2": "HU",
@@ -181,7 +329,8 @@
   "mult": 0.8,
   "moeda": "HUF",
   "lat": 47.5,
-  "lng": 19.04
+  "lng": 19.04,
+  "continente": "Europa"
  },
  {
   "iso2": "ID",
@@ -189,7 +338,8 @@
   "mult": 0.6,
   "moeda": "IDR",
   "lat": -6.21,
-  "lng": 106.85
+  "lng": 106.85,
+  "continente": "Ásia"
  },
  {
   "iso2": "IE",
@@ -197,7 +347,17 @@
   "mult": 1.4,
   "moeda": "EUR",
   "lat": 53.35,
-  "lng": -6.26
+  "lng": -6.26,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "IR",
+  "nome": "Irã",
+  "mult": 0.45,
+  "moeda": "IRR",
+  "lat": 35.69,
+  "lng": 51.39,
+  "continente": "Oriente Médio"
  },
  {
   "iso2": "IS",
@@ -205,7 +365,8 @@
   "mult": 1.8,
   "moeda": "ISK",
   "lat": 64.15,
-  "lng": -21.94
+  "lng": -21.94,
+  "continente": "Europa"
  },
  {
   "iso2": "IT",
@@ -213,7 +374,8 @@
   "mult": 1.2,
   "moeda": "EUR",
   "lat": 41.9,
-  "lng": 12.5
+  "lng": 12.5,
+  "continente": "Europa"
  },
  {
   "iso2": "JP",
@@ -221,7 +383,26 @@
   "mult": 1.2,
   "moeda": "JPY",
   "lat": 35.68,
-  "lng": 139.69
+  "lng": 139.69,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "JO",
+  "nome": "Jordânia",
+  "mult": 0.9,
+  "moeda": "JOD",
+  "lat": 31.95,
+  "lng": 35.93,
+  "continente": "Oriente Médio"
+ },
+ {
+  "iso2": "LA",
+  "nome": "Laos",
+  "mult": 0.5,
+  "moeda": "LAK",
+  "lat": 17.97,
+  "lng": 102.63,
+  "continente": "Ásia"
  },
  {
   "iso2": "MY",
@@ -229,7 +410,8 @@
   "mult": 0.7,
   "moeda": "MYR",
   "lat": 3.14,
-  "lng": 101.69
+  "lng": 101.69,
+  "continente": "Ásia"
  },
  {
   "iso2": "MA",
@@ -237,7 +419,26 @@
   "mult": 0.7,
   "moeda": "MAD",
   "lat": 34.02,
-  "lng": -6.84
+  "lng": -6.84,
+  "continente": "África"
+ },
+ {
+  "iso2": "MN",
+  "nome": "Mongólia",
+  "mult": 0.6,
+  "moeda": "MNT",
+  "lat": 47.89,
+  "lng": 106.91,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "ME",
+  "nome": "Montenegro",
+  "mult": 0.8,
+  "moeda": "EUR",
+  "lat": 42.44,
+  "lng": 19.26,
+  "continente": "Europa"
  },
  {
   "iso2": "MX",
@@ -245,7 +446,17 @@
   "mult": 0.8,
   "moeda": "MXN",
   "lat": 19.43,
-  "lng": -99.13
+  "lng": -99.13,
+  "continente": "América do Norte"
+ },
+ {
+  "iso2": "NA",
+  "nome": "Namíbia",
+  "mult": 0.8,
+  "moeda": "NAD",
+  "lat": -22.56,
+  "lng": 17.08,
+  "continente": "África"
  },
  {
   "iso2": "NP",
@@ -253,7 +464,17 @@
   "mult": 0.5,
   "moeda": "NPR",
   "lat": 27.72,
-  "lng": 85.32
+  "lng": 85.32,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "NI",
+  "nome": "Nicarágua",
+  "mult": 0.6,
+  "moeda": "NIO",
+  "lat": 12.13,
+  "lng": -86.25,
+  "continente": "América Central"
  },
  {
   "iso2": "NO",
@@ -261,7 +482,8 @@
   "mult": 1.7,
   "moeda": "NOK",
   "lat": 59.91,
-  "lng": 10.75
+  "lng": 10.75,
+  "continente": "Europa"
  },
  {
   "iso2": "NZ",
@@ -269,7 +491,35 @@
   "mult": 1.4,
   "moeda": "NZD",
   "lat": -41.29,
-  "lng": 174.78
+  "lng": 174.78,
+  "continente": "Oceania"
+ },
+ {
+  "iso2": "OM",
+  "nome": "Omã",
+  "mult": 1.0,
+  "moeda": "OMR",
+  "lat": 23.59,
+  "lng": 58.41,
+  "continente": "Oriente Médio"
+ },
+ {
+  "iso2": "PA",
+  "nome": "Panamá",
+  "mult": 0.9,
+  "moeda": "USD",
+  "lat": 8.98,
+  "lng": -79.52,
+  "continente": "América Central"
+ },
+ {
+  "iso2": "PK",
+  "nome": "Paquistão",
+  "mult": 0.45,
+  "moeda": "PKR",
+  "lat": 33.69,
+  "lng": 73.05,
+  "continente": "Ásia"
  },
  {
   "iso2": "PY",
@@ -277,7 +527,8 @@
   "mult": 0.6,
   "moeda": "PYG",
   "lat": -25.26,
-  "lng": -57.58
+  "lng": -57.58,
+  "continente": "América do Sul"
  },
  {
   "iso2": "NL",
@@ -285,7 +536,8 @@
   "mult": 1.3,
   "moeda": "EUR",
   "lat": 52.37,
-  "lng": 4.9
+  "lng": 4.9,
+  "continente": "Europa"
  },
  {
   "iso2": "PE",
@@ -293,7 +545,8 @@
   "mult": 0.65,
   "moeda": "PEN",
   "lat": -12.05,
-  "lng": -77.04
+  "lng": -77.04,
+  "continente": "América do Sul"
  },
  {
   "iso2": "PL",
@@ -301,7 +554,8 @@
   "mult": 0.8,
   "moeda": "PLN",
   "lat": 52.23,
-  "lng": 21.01
+  "lng": 21.01,
+  "continente": "Europa"
  },
  {
   "iso2": "PT",
@@ -309,7 +563,8 @@
   "mult": 1.0,
   "moeda": "EUR",
   "lat": 38.72,
-  "lng": -9.14
+  "lng": -9.14,
+  "continente": "Europa"
  },
  {
   "iso2": "KE",
@@ -317,7 +572,8 @@
   "mult": 0.8,
   "moeda": "KES",
   "lat": -1.29,
-  "lng": 36.82
+  "lng": 36.82,
+  "continente": "África"
  },
  {
   "iso2": "GB",
@@ -325,7 +581,17 @@
   "mult": 1.4,
   "moeda": "GBP",
   "lat": 51.51,
-  "lng": -0.13
+  "lng": -0.13,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "RO",
+  "nome": "Romênia",
+  "mult": 0.7,
+  "moeda": "RON",
+  "lat": 44.43,
+  "lng": 26.1,
+  "continente": "Europa"
  },
  {
   "iso2": "SG",
@@ -333,7 +599,26 @@
   "mult": 1.5,
   "moeda": "SGD",
   "lat": 1.35,
-  "lng": 103.82
+  "lng": 103.82,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "LK",
+  "nome": "Sri Lanka",
+  "mult": 0.55,
+  "moeda": "LKR",
+  "lat": 6.93,
+  "lng": 79.86,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "SE",
+  "nome": "Suécia",
+  "mult": 1.3,
+  "moeda": "SEK",
+  "lat": 59.33,
+  "lng": 18.07,
+  "continente": "Europa"
  },
  {
   "iso2": "CH",
@@ -341,7 +626,17 @@
   "mult": 1.8,
   "moeda": "CHF",
   "lat": 46.95,
-  "lng": 7.45
+  "lng": 7.45,
+  "continente": "Europa"
+ },
+ {
+  "iso2": "RS",
+  "nome": "Sérvia",
+  "mult": 0.7,
+  "moeda": "RSD",
+  "lat": 44.79,
+  "lng": 20.45,
+  "continente": "Europa"
  },
  {
   "iso2": "TH",
@@ -349,7 +644,26 @@
   "mult": 0.7,
   "moeda": "THB",
   "lat": 13.76,
-  "lng": 100.5
+  "lng": 100.5,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "TW",
+  "nome": "Taiwan",
+  "mult": 0.9,
+  "moeda": "TWD",
+  "lat": 25.03,
+  "lng": 121.57,
+  "continente": "Ásia"
+ },
+ {
+  "iso2": "TZ",
+  "nome": "Tanzânia",
+  "mult": 0.8,
+  "moeda": "TZS",
+  "lat": -6.79,
+  "lng": 39.21,
+  "continente": "África"
  },
  {
   "iso2": "CZ",
@@ -357,7 +671,8 @@
   "mult": 0.9,
   "moeda": "CZK",
   "lat": 50.08,
-  "lng": 14.44
+  "lng": 14.44,
+  "continente": "Europa"
  },
  {
   "iso2": "TR",
@@ -365,7 +680,8 @@
   "mult": 0.8,
   "moeda": "TRY",
   "lat": 41.01,
-  "lng": 28.98
+  "lng": 28.98,
+  "continente": "Oriente Médio"
  },
  {
   "iso2": "UY",
@@ -373,7 +689,17 @@
   "mult": 1.1,
   "moeda": "UYU",
   "lat": -34.9,
-  "lng": -56.19
+  "lng": -56.19,
+  "continente": "América do Sul"
+ },
+ {
+  "iso2": "UZ",
+  "nome": "Uzbequistão",
+  "mult": 0.5,
+  "moeda": "UZS",
+  "lat": 41.3,
+  "lng": 69.24,
+  "continente": "Ásia"
  },
  {
   "iso2": "VN",
@@ -381,7 +707,8 @@
   "mult": 0.55,
   "moeda": "VND",
   "lat": 21.03,
-  "lng": 105.85
+  "lng": 105.85,
+  "continente": "Ásia"
  },
  {
   "iso2": "ZA",
@@ -389,7 +716,8 @@
   "mult": 0.7,
   "moeda": "ZAR",
   "lat": -33.92,
-  "lng": 18.42
+  "lng": 18.42,
+  "continente": "África"
  },
  {
   "iso2": "AT",
@@ -397,7 +725,8 @@
   "mult": 1.3,
   "moeda": "EUR",
   "lat": 48.21,
-  "lng": 16.37
+  "lng": 16.37,
+  "continente": "Europa"
  },
  {
   "iso2": "IN",
@@ -405,6 +734,7 @@
   "mult": 0.5,
   "moeda": "INR",
   "lat": 28.61,
-  "lng": 77.21
+  "lng": 77.21,
+  "continente": "Ásia"
  }
 ]
