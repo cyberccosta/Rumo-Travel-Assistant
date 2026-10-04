@@ -1,6 +1,6 @@
 fastapi
 uvicorn[standard]
 httpx
-anthropic
+anthropic  # só é usado com LLM_PROVIDER=claude
 pydantic>=2
 python-dotenv
