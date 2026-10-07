@@ -176,12 +176,127 @@ class ContextoFinanceiro(BaseModel):
     destinos: list[FinancasDestino]
 
 
+# --- Preparação da viagem (tudo informado pelo viajante, sem IA) ---
+class Anexo(BaseModel):                 # arquivo guardado no servidor; a viagem só guarda a referência
+    id: str
+    nome: str = Field(max_length=200)
+    tamanho: int = 0
+    mime: str = ""
+
+
+class ItemChecklist(BaseModel):
+    id: str
+    texto: str = Field(max_length=200)
+    feito: bool = False
+
+
+class Documento(BaseModel):
+    id: str
+    nome: str = Field(max_length=200)
+    tipo: str = Field("outro", max_length=40)
+    validade: str | None = None         # AAAA-MM-DD
+    nota: str = Field("", max_length=500)
+    anexo: Anexo | None = None
+
+
+class RegraEntrada(BaseModel):          # regra de entrada, visto ou exigência anotada pelo viajante
+    id: str
+    pais: str = Field("", max_length=120)
+    assunto: str = Field("", max_length=120)
+    detalhes: str = Field("", max_length=1500)
+    link: str = Field("", max_length=500)
+    resolvido: bool = False
+
+
+class Reserva(BaseModel):
+    id: str
+    tipo: str = Field("outro", max_length=40)        # voo | onibus | hospedagem | passeio | outro
+    titulo: str = Field(max_length=200)
+    data: str | None = None             # AAAA-MM-DD (início)
+    data_fim: str | None = None         # opcional (ex.: saída da hospedagem)
+    codigo: str = Field("", max_length=80)
+    valor_brl: float | None = Field(None, ge=0, le=1e9)
+    status: str = Field("reservada", max_length=20)  # a_reservar | reservada | paga
+    nota: str = Field("", max_length=500)
+    anexo: Anexo | None = None
+
+
+class Lancamento(BaseModel):            # gasto previsto que não é uma reserva
+    id: str
+    categoria: str = Field("outros", max_length=40)
+    descricao: str = Field(max_length=200)
+    valor_brl: float = Field(0, ge=0, le=1e9)
+    pago: bool = False
+
+
+class Financeiro(BaseModel):            # só R$ (BRL) por enquanto; múltiplas moedas ficam para uma versão futura
+    guardado_brl: float = Field(0, ge=0, le=1e9)
+    meta_brl: float | None = Field(None, ge=0, le=1e9)
+    lancamentos: list[Lancamento] = []
+
+
+class Preparacao(BaseModel):
+    checklist: list[ItemChecklist] = []
+    sugestoes_importadas: bool = False  # as sugestões do roteiro já foram copiadas para o checklist
+    documentos: list[Documento] = []
+    regras: list[RegraEntrada] = []
+    reservas: list[Reserva] = []
+    financeiro: Financeiro = Field(default_factory=Financeiro)
+
+
+# --- Em viagem (tudo registrado pelo viajante durante a expedição, sem IA) ---
+# O diário de cada dia continua em DiaRoteiro.notas, para não perder o que já foi escrito.
+class Local(BaseModel):                 # lugar que o viajante quer visitar ou já visitou
+    id: str
+    nome: str = Field(max_length=200)
+    lugar: str = Field("", max_length=120)           # cidade ou país, ajuda a achar no mapa
+    tipo: str = Field("outro", max_length=40)
+    visitado: bool = False
+    data: str | None = None             # AAAA-MM-DD da visita
+    nota: str = Field("", max_length=500)
+
+
+class Deslocamento(BaseModel):          # trajeto realizado entre dois pontos
+    id: str
+    de: str = Field(max_length=120)
+    para: str = Field(max_length=120)
+    modo: str = Field("outro", max_length=40)
+    data: str | None = None
+    duracao: str = Field("", max_length=60)
+    nota: str = Field("", max_length=500)
+
+
+class GastoViagem(BaseModel):           # só R$ (BRL) por enquanto
+    id: str
+    categoria: str = Field("outros", max_length=40)
+    descricao: str = Field(max_length=200)
+    valor_brl: float = Field(0, ge=0, le=1e9)
+    data: str | None = None
+
+
+class Registro(BaseModel):              # anotação da viagem, organizada por categoria
+    id: str
+    categoria: str = Field("outros", max_length=40)
+    titulo: str = Field(max_length=200)
+    texto: str = Field("", max_length=3000)
+    data: str | None = None
+
+
+class EmViagem(BaseModel):
+    locais: list[Local] = []
+    deslocamentos: list[Deslocamento] = []
+    gastos: list[GastoViagem] = []
+    registros: list[Registro] = []
+
+
 class Plan(BaseModel):
     request: PlanRequest
     itinerario: Itinerario
     custos: Custos | None
     clima: AnaliseClima | None = None
     financas: ContextoFinanceiro | None = None
+    preparacao: Preparacao = Field(default_factory=Preparacao)
+    em_viagem: EmViagem = Field(default_factory=EmViagem)
     avisos: dict[str, str] = {}       # fonte -> motivo, quando uma fonte opcional (clima, financas) falhou
     id: str | None = None             # preenchidos ao salvar a viagem
     criado_em: str | None = None

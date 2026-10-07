@@ -29,3 +29,6 @@ key.properties
 .DS_Store
 Thumbs.db
 *.log
+
+# Anexos enviados pelo viajante (Preparação)
+data/anexos/
